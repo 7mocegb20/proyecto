@@ -76,7 +76,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Me perdonas?</h1>
+        <h1>¿Me perdonas?</h1>
         <div class="button-container">
             <button id="siButton">SI</button>
             <button id="noButton">NO</button>
@@ -86,30 +86,30 @@
     <script>
         const noButton = document.getElementById('noButton');
         const siButton = document.getElementById('siButton');
-
+    
         // Función para mover el botón "NO" aleatoriamente
         function moveButton() {
             const maxX = window.innerWidth - noButton.offsetWidth - 20; // Añadir 20 para un margen
             const maxY = window.innerHeight - noButton.offsetHeight - 20; // Añadir 20 para un margen
-
+    
             const randomX = Math.floor(Math.random() * maxX);
             const randomY = Math.floor(Math.random() * maxY);
-
+    
             noButton.style.position = 'absolute'; // Asegura que el botón "NO" tenga posición absoluta
             noButton.style.left = `${randomX}px`;
             noButton.style.top = `${randomY}px`;
         }
-
+    
         // Evento cuando se hace click en el botón "SI"
         siButton.addEventListener('click', function() {
-            alert('Gracias preciosa');
+            prompt("Nando dice", "Gracias preciosa 😽"); // Aquí cambiamos el mensaje
         });
-
+    
         // Evento cuando se hace click en el botón "NO"
         noButton.addEventListener('click', function() {
             moveButton(); // Mueve el botón "NO"
         });
-
     </script>
+
 </body>
 </html>
