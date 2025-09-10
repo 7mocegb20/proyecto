@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me perdonas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Fuente romántica -->
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive; /* Cambié la fuente a una más romántica */
+            background: linear-gradient(45deg, #ff6f61, #ffcccb); /* Fondo degradado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+            padding: 40px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espacio entre los botones */
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px; /* Botones redondeados */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Efecto suave al hacer hover */
+            width: 200px;
+        }
+
+        /* Botón "SI" */
+        #siButton {
+            background-color: #ff8a65;
+            color: white;
+        }
+
+        #siButton:hover {
+            background-color: #ff7043;
+            transform: scale(1.1); /* Botón crece al pasar el mouse */
+        }
+
+        /* Botón "NO" */
+        #noButton {
+            background-color: #ffd54f;
+            color: white;
+        }
+
+        #noButton:hover {
+            background-color: #ffca28;
+            transform: scale(1.1); /* Botón crece al pasar el mouse */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Me perdonas?</h1>
+        <div class="button-container">
+            <button id="siButton">SI</button>
+            <button id="noButton">NO</button>
+        </div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const siButton = document.getElementById('siButton');
+
+        // Función para mover el botón "NO" aleatoriamente
+        function moveButton() {
+            const maxX = window.innerWidth - noButton.offsetWidth - 20; // Añadir 20 para un margen
+            const maxY = window.innerHeight - noButton.offsetHeight - 20; // Añadir 20 para un margen
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            noButton.style.position = 'absolute'; // Asegura que el botón "NO" tenga posición absoluta
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+
+        // Evento cuando se hace click en el botón "SI"
+        siButton.addEventListener('click', function() {
+            alert('Gracias preciosa');
+        });
+
+        // Evento cuando se hace click en el botón "NO"
+        noButton.addEventListener('click', function() {
+            moveButton(); // Mueve el botón "NO"
+        });
+
+    </script>
+</body>
+</html>
